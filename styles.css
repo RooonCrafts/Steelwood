@@ -1,0 +1,116 @@
+body {
+    background-color: #0f2140;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #4c5ea1;
+    padding-top: 60px;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li:hover {
+    background-color: #3a4979;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-toggle-label {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    cursor: pointer;
+    color: white;
+}
+
+.menu-toggle-label span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle:checked + .menu {
+    left: 0;
+}
+
+.menu-toggle:checked + .menu + .menu-toggle-label span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle:checked + .menu + .menu-toggle-label span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked + .menu + .menu-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: #080e30;
+    animation: fadeIn 1s ease forwards;
+}
+
+main {
+    padding: 20px;
+    animation: fadeInUp 1s ease forwards;
+    padding-bottom: 100px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #0c1052;
+    padding: 10px 0;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
